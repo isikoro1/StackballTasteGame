@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
             clearUI.SetActive(false);
             gameOverUI.SetActive(true);
 
-            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z))
             {
                 SceneManager.LoadScene(0);
             }

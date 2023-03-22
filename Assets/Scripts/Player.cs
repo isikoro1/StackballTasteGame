@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
     /// </summary>
     void TouchCheck()
     {
-        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
+        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Z))
         {
             if (playerState == PlayerState.Prepre)
             {
@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector3(0, -100 * Time.fixedDeltaTime * 7, 0);
         }
 
-        if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Z))
         {
             touch = false;
 
@@ -237,7 +237,7 @@ public class Player : MonoBehaviour
     {
         if(playerState == PlayerState.Finish)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z))
             {
                 FindObjectOfType<LevelSpawns>().NextLevel();
             }
